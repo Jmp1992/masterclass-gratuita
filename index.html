@@ -140,10 +140,9 @@
     .topbar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 70px;
-      padding: 12px 14px 12px 22px;
+      justify-content: center;
+      min-height: 64px;
+      padding: 14px 22px;
       border: 1px solid var(--border);
       border-radius: 18px;
       background: rgba(5, 7, 6, 0.86);
@@ -154,11 +153,13 @@
     .event-info {
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 8px 14px;
       font-size: 0.88rem;
       font-weight: 800;
       letter-spacing: 0.02em;
+      text-align: center;
       text-transform: uppercase;
     }
 
@@ -214,15 +215,6 @@
     .button:hover {
       transform: translateY(-2px);
       filter: brightness(1.06);
-    }
-
-    .button-top {
-      min-width: 235px;
-      min-height: 46px;
-      padding: 12px 20px;
-      color: #07110c;
-      background: #ffffff;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.13);
     }
 
     .button-whatsapp {
@@ -380,7 +372,6 @@
       width: min(100%, 850px);
       margin: 24px auto 0;
       padding: 18px 20px 18px 24px;
-      scroll-margin-top: 20px;
       border: 1px solid var(--border);
       border-radius: 18px;
       background: var(--surface);
@@ -415,17 +406,17 @@
       line-height: 1.45;
     }
 
-    /* Bloque independiente del horario */
+    /* Horario inferior */
 
     .schedule-block {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 7px 11px;
+      gap: 9px;
       width: min(100%, 850px);
       margin: 14px auto 0;
-      padding: 16px 20px;
+      padding: 17px 20px;
       border: 1px solid var(--border);
       border-radius: 16px;
       background: rgba(5, 7, 6, 0.8);
@@ -439,7 +430,19 @@
       backdrop-filter: blur(12px);
     }
 
-    .schedule-block .schedule-separator {
+    .schedule-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px 11px;
+    }
+
+    .schedule-times {
+      font-size: 0.86rem;
+    }
+
+    .schedule-separator {
       color: #56605a;
     }
 
@@ -506,16 +509,8 @@
         width: min(100% - 28px, 760px);
       }
 
-      .topbar {
-        align-items: stretch;
-      }
-
       .event-info {
         font-size: 0.78rem;
-      }
-
-      .button-top {
-        min-width: 200px;
       }
 
       .features {
@@ -539,8 +534,7 @@
       }
 
       .topbar {
-        flex-direction: column;
-        gap: 13px;
+        min-height: auto;
         padding: 15px;
       }
 
@@ -556,10 +550,6 @@
 
       .event-info .separator:first-of-type {
         display: none;
-      }
-
-      .button-top {
-        width: 100%;
       }
 
       .hero {
@@ -615,9 +605,12 @@
       }
 
       .schedule-block {
-        gap: 5px 8px;
-        padding: 15px;
+        padding: 16px 12px;
         font-size: 0.7rem;
+      }
+
+      .schedule-times {
+        font-size: 0.76rem;
       }
 
       .features {
@@ -642,15 +635,6 @@
       .event-info .time {
         width: 100%;
       }
-
-      .schedule-block {
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .schedule-block .schedule-separator {
-        display: none;
-      }
     }
   </style>
 </head>
@@ -670,7 +654,7 @@
 
   <main class="page">
 
-    <!-- Barra superior -->
+    <!-- Barra superior sin botón -->
     <header class="topbar">
       <div class="event-info">
         <span class="live">En vivo</span>
@@ -681,14 +665,6 @@
         <span class="separator">·</span>
         <span class="time">🇪🇸 7 PM ESPAÑA</span>
       </div>
-
-      <a
-        class="button button-top"
-        href="#registro"
-      >
-        Asegurá tu lugar
-        <span aria-hidden="true">→</span>
-      </a>
     </header>
 
     <!-- Contenido principal -->
@@ -722,7 +698,6 @@
         Con Juan Pastor
       </p>
 
-      <!-- Texto que apunta a los pasos -->
       <div class="main-action">
         <p class="register-prompt">
           Registrate siguiendo estos pasos 👇🏻
@@ -840,21 +815,25 @@
         </a>
       </div>
 
-      <!-- Horario en un bloque independiente -->
+      <!-- Horario inferior separado en dos renglones -->
       <div class="schedule-block">
-        <span class="live">En vivo</span>
 
-        <span class="schedule-separator">·</span>
+        <div class="schedule-line">
+          <span class="live">En vivo</span>
 
-        <span>Lunes 21 de septiembre</span>
+          <span class="schedule-separator">·</span>
 
-        <span class="schedule-separator">·</span>
+          <span>Lunes 21 de septiembre</span>
+        </div>
 
-        <span>🇦🇷 2 PM ARG</span>
+        <div class="schedule-line schedule-times">
+          <span>🇦🇷 2 PM ARG</span>
 
-        <span class="schedule-separator">·</span>
+          <span class="schedule-separator">·</span>
 
-        <span>🇪🇸 7 PM ESPAÑA</span>
+          <span>🇪🇸 7 PM ESPAÑA</span>
+        </div>
+
       </div>
 
     </section>
