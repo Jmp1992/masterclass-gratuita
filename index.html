@@ -167,6 +167,7 @@
       align-items: center;
       gap: 7px;
       color: var(--orange-light);
+      white-space: nowrap;
     }
 
     .live::before {
@@ -222,14 +223,6 @@
       color: #07110c;
       background: #ffffff;
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.13);
-    }
-
-    .button-primary {
-      width: min(100%, 480px);
-      min-height: 64px;
-      color: #07110c;
-      background: #ffffff;
-      box-shadow: 0 16px 38px rgba(255, 255, 255, 0.14);
     }
 
     .button-whatsapp {
@@ -358,23 +351,34 @@
       text-transform: uppercase;
     }
 
+    /* Texto que apunta a los botones */
+
     .main-action {
       display: flex;
       width: 100%;
       flex-direction: column;
       align-items: center;
-      margin-top: 32px;
+      margin-top: 30px;
+    }
+
+    .register-prompt {
+      color: #ffffff;
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      text-align: center;
     }
 
     /* Pasos */
 
     .second-step {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
       gap: 24px;
       width: min(100%, 850px);
-      margin: 26px auto 0;
+      margin: 24px auto 0;
       padding: 18px 20px 18px 24px;
       scroll-margin-top: 20px;
       border: 1px solid var(--border);
@@ -409,6 +413,25 @@
       color: var(--text-muted);
       font-size: 0.88rem;
       line-height: 1.45;
+    }
+
+    /* Horario repetido debajo del paso 2 */
+
+    .step-schedule {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px 8px;
+      margin-top: 11px;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .step-schedule .schedule-separator {
+      color: #56605a;
     }
 
     /* Franja inferior */
@@ -562,13 +585,11 @@
       }
 
       .main-action {
-        margin-top: 26px;
+        margin-top: 25px;
       }
 
-      .button-primary {
-        min-height: 60px;
-        padding: 15px 17px;
-        font-size: 0.83rem;
+      .register-prompt {
+        font-size: 1.4rem;
       }
 
       .second-step {
@@ -582,6 +603,11 @@
       .button-instagram {
         width: 100%;
         font-size: 0.78rem;
+      }
+
+      .step-schedule {
+        justify-content: center;
+        font-size: 0.68rem;
       }
 
       .features {
@@ -599,12 +625,21 @@
         font-size: 1.86rem;
       }
 
-      .separator {
+      .event-info .separator {
         display: none;
       }
 
-      .time {
+      .event-info .time {
         width: 100%;
+      }
+
+      .step-schedule {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .step-schedule .schedule-separator {
+        display: none;
       }
     }
   </style>
@@ -689,15 +724,11 @@
         Con Juan Pastor
       </p>
 
-      <!-- CTA general -->
+      <!-- Texto, no es un botón -->
       <div class="main-action">
-        <a
-          class="button button-primary"
-          href="#registro"
-        >
-          Reservar mi lugar gratis
-          <span aria-hidden="true">→</span>
-        </a>
+        <p class="register-prompt">
+          Reserva mi lugar gratis 👇🏻
+        </p>
       </div>
 
       <!-- Paso 1 -->
@@ -766,6 +797,23 @@
             Te envío una clase privada para que veas antes
             de la masterclass.
           </p>
+
+          <!-- Horario repetido -->
+          <div class="step-schedule">
+            <span class="live">En vivo</span>
+
+            <span class="schedule-separator">·</span>
+
+            <span>Lunes 21 de septiembre</span>
+
+            <span class="schedule-separator">·</span>
+
+            <span>🇦🇷 2 PM ARG</span>
+
+            <span class="schedule-separator">·</span>
+
+            <span>🇪🇸 7 PM ESPAÑA</span>
+          </div>
         </div>
 
         <a
