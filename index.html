@@ -2,19 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masterclass de Rendimiento para Poker Players | Juan Pastor</title>
-
-  <meta
-    name="description"
-    content="Aprendé el sistema de rendimiento de Juan Pastor para sostener tu mejor nivel en las mesas."
-  >
-
+  <meta name="description" content="Aprendé el sistema de rendimiento de Juan Pastor para sostener tu mejor nivel en las mesas.">
   <meta name="theme-color" content="#050706">
 
   <!-- Meta Pixel Code -->
@@ -64,12 +54,7 @@
       overflow-x: hidden;
       background: var(--background);
       color: var(--text);
-      font-family:
-        Inter,
-        Montserrat,
-        Arial,
-        Helvetica,
-        sans-serif;
+      font-family: Inter, Montserrat, Arial, Helvetica, sans-serif;
       line-height: 1.4;
     }
 
@@ -80,23 +65,10 @@
       z-index: -2;
       pointer-events: none;
       background-image:
-        linear-gradient(
-          rgba(255, 255, 255, 0.035) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.035) 1px,
-          transparent 1px
-        );
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
       background-size: 42px 42px;
-      mask-image:
-        linear-gradient(
-          to bottom,
-          black 0%,
-          black 70%,
-          transparent 100%
-        );
+      mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
     }
 
     body::after {
@@ -109,13 +81,7 @@
       height: 650px;
       pointer-events: none;
       transform: translateX(-50%);
-      background:
-        radial-gradient(
-          circle,
-          rgba(255, 91, 38, 0.28) 0%,
-          rgba(255, 91, 38, 0.1) 38%,
-          transparent 70%
-        );
+      background: radial-gradient(circle, rgba(255, 91, 38, 0.28) 0%, rgba(255, 91, 38, 0.1) 38%, transparent 70%);
       filter: blur(12px);
     }
 
@@ -135,14 +101,13 @@
       padding: 20px 0 38px;
     }
 
-    /* Barra superior */
-
     .topbar {
       display: flex;
       align-items: center;
-      justify-content: center;
-      min-height: 64px;
-      padding: 14px 22px;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 70px;
+      padding: 12px 14px 12px 22px;
       border: 1px solid var(--border);
       border-radius: 18px;
       background: rgba(5, 7, 6, 0.86);
@@ -153,13 +118,11 @@
     .event-info {
       display: flex;
       align-items: center;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 8px 14px;
       font-size: 0.88rem;
       font-weight: 800;
       letter-spacing: 0.02em;
-      text-align: center;
       text-transform: uppercase;
     }
 
@@ -181,15 +144,14 @@
       box-shadow: 0 0 14px var(--orange);
     }
 
-    .separator {
+    .separator,
+    .schedule-separator {
       color: #56605a;
     }
 
     .time {
       white-space: nowrap;
     }
-
-    /* Botones */
 
     .button {
       display: inline-flex;
@@ -206,10 +168,7 @@
       text-align: center;
       text-transform: uppercase;
       cursor: pointer;
-      transition:
-        transform 180ms ease,
-        box-shadow 180ms ease,
-        filter 180ms ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
     }
 
     .button:hover {
@@ -217,27 +176,26 @@
       filter: brightness(1.06);
     }
 
+    .button-top {
+      min-width: 235px;
+      min-height: 46px;
+      padding: 12px 20px;
+      color: #07110c;
+      background: #ffffff;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.13);
+    }
+
     .button-whatsapp {
       min-height: 52px;
       color: #ffffff;
-      background:
-        linear-gradient(
-          135deg,
-          #00a85c,
-          #00cf76
-        );
+      background: linear-gradient(135deg, #00a85c, #00cf76);
       box-shadow: 0 12px 30px rgba(0, 185, 104, 0.22);
     }
 
     .button-instagram {
       min-height: 52px;
       color: #ffffff;
-      background:
-        linear-gradient(
-          110deg,
-          var(--instagram-one),
-          var(--instagram-two)
-        );
+      background: linear-gradient(110deg, var(--instagram-one), var(--instagram-two));
       box-shadow: 0 12px 30px rgba(213, 44, 119, 0.2);
     }
 
@@ -246,8 +204,6 @@
       height: 21px;
       flex-shrink: 0;
     }
-
-    /* Contenido principal */
 
     .hero {
       position: relative;
@@ -267,12 +223,7 @@
       width: 600px;
       height: 300px;
       transform: translateX(-50%);
-      background:
-        radial-gradient(
-          circle,
-          rgba(0, 185, 104, 0.12),
-          transparent 68%
-        );
+      background: radial-gradient(circle, rgba(0, 185, 104, 0.12), transparent 68%);
       filter: blur(15px);
     }
 
@@ -343,8 +294,6 @@
       text-transform: uppercase;
     }
 
-    /* Texto que apunta a los pasos */
-
     .main-action {
       display: flex;
       width: 100%;
@@ -362,8 +311,6 @@
       text-align: center;
     }
 
-    /* Pasos */
-
     .second-step {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -372,6 +319,7 @@
       width: min(100%, 850px);
       margin: 24px auto 0;
       padding: 18px 20px 18px 24px;
+      scroll-margin-top: 20px;
       border: 1px solid var(--border);
       border-radius: 18px;
       background: var(--surface);
@@ -406,8 +354,6 @@
       line-height: 1.45;
     }
 
-    /* Horario inferior */
-
     .schedule-block {
       display: flex;
       flex-direction: column;
@@ -441,12 +387,6 @@
     .schedule-times {
       font-size: 0.86rem;
     }
-
-    .schedule-separator {
-      color: #56605a;
-    }
-
-    /* Franja inferior */
 
     .features {
       display: grid;
@@ -502,8 +442,6 @@
       font-size: 0.76rem;
     }
 
-    /* Responsive */
-
     @media (max-width: 900px) {
       .page {
         width: min(100% - 28px, 760px);
@@ -511,6 +449,10 @@
 
       .event-info {
         font-size: 0.78rem;
+      }
+
+      .button-top {
+        min-width: 200px;
       }
 
       .features {
@@ -534,7 +476,8 @@
       }
 
       .topbar {
-        min-height: auto;
+        flex-direction: column;
+        gap: 13px;
         padding: 15px;
       }
 
@@ -550,6 +493,10 @@
 
       .event-info .separator:first-of-type {
         display: none;
+      }
+
+      .button-top {
+        width: 100%;
       }
 
       .hero {
@@ -640,21 +587,11 @@
 </head>
 
 <body>
-
-  <!-- Meta Pixel noscript -->
   <noscript>
-    <img
-      height="1"
-      width="1"
-      style="display:none"
-      src="https://www.facebook.com/tr?id=1112741794543926&ev=PageView&noscript=1"
-      alt=""
-    >
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1112741794543926&ev=PageView&noscript=1" alt="">
   </noscript>
 
   <main class="page">
-
-    <!-- Barra superior sin botón -->
     <header class="topbar">
       <div class="event-info">
         <span class="live">En vivo</span>
@@ -665,210 +602,90 @@
         <span class="separator">·</span>
         <span class="time">🇪🇸 7 PM ESPAÑA</span>
       </div>
+
+      <a class="button button-top" href="#registro">
+        Asegurá tu lugar
+        <span aria-hidden="true">→</span>
+      </a>
     </header>
 
-    <!-- Contenido principal -->
     <section class="hero">
-
-      <div class="eyebrow">
-        Masterclass privada y gratuita · Cupos limitados
-      </div>
+      <div class="eyebrow">Masterclass privada y gratuita · Cupos limitados</div>
 
       <h1>
-        <span>
-          Aprendé mi sistema de rendimiento
-        </span>
-
-        <span class="accent">
-          para poker players
-        </span>
-
-        <span>
-          y sostené tu mejor nivel en las mesas
-        </span>
+        <span>Aprendé mi sistema de rendimiento</span>
+        <span class="accent">para poker players</span>
+        <span>y sostené tu mejor nivel en las mesas</span>
       </h1>
 
       <p class="subtitle">
-        <strong>En esta masterclass en vivo</strong>
-        vas a aprender cómo gestionar tu energía, foco y recuperación
-        para rendir al máximo durante más tiempo.
+        <strong>En esta masterclass en vivo</strong> vas a aprender cómo gestionar tu energía, foco y recuperación para rendir al máximo durante más tiempo.
       </p>
 
-      <p class="host">
-        Con Juan Pastor
-      </p>
+      <p class="host">Con Juan Pastor</p>
 
       <div class="main-action">
-        <p class="register-prompt">
-          Registrate siguiendo estos pasos 👇🏻
-        </p>
+        <p class="register-prompt">Registrate siguiendo estos pasos 👇🏻</p>
       </div>
 
-      <!-- Paso 1 -->
-      <div
-        class="second-step whatsapp-step"
-        id="registro"
-      >
+      <div class="second-step whatsapp-step" id="registro">
         <div>
-          <div class="step-label">
-            Paso 1 · Reservá tu lugar
-          </div>
-
-          <h2>
-            Unite al grupo privado de WhatsApp
-          </h2>
-
-          <p>
-            Ahí voy a enviarte el acceso y todos los avisos
-            importantes de la masterclass.
-          </p>
+          <div class="step-label">Paso 1 · Reservá tu lugar</div>
+          <h2>Unite al grupo privado de WhatsApp</h2>
+          <p>Ahí voy a enviarte el acceso y todos los avisos importantes de la masterclass.</p>
         </div>
 
-        <a
-          class="button button-whatsapp"
-          href="https://chat.whatsapp.com/ClLJsVv1HwL1ZPWXsqWC4W"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-meta-event="Lead"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.3-4.72A8.5 8.5 0 1 1 20.5 11.8Z"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-
-            <path
-              d="M8.2 7.8c.3-.3.65-.25.9-.05l1.05 1.35c.2.25.18.52.02.78l-.55.82c-.16.24-.12.5.04.72.55.8 1.22 1.48 2.02 2.02.22.16.48.2.72.04l.82-.55c.26-.16.53-.18.78.02l1.35 1.05c.2.25.25.6-.05.9-.55.56-1.3.82-2.06.67-1.53-.3-3.05-1.25-4.42-2.62-1.37-1.37-2.32-2.89-2.62-4.42-.15-.76.11-1.51.67-2.06Z"
-              fill="currentColor"
-            />
+        <a class="button button-whatsapp" href="https://chat.whatsapp.com/ClLJsVv1HwL1ZPWXsqWC4W" target="_blank" rel="noopener noreferrer" data-meta-event="Lead">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.3-4.72A8.5 8.5 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.2 7.8c.3-.3.65-.25.9-.05l1.05 1.35c.2.25.18.52.02.78l-.55.82c-.16.24-.12.5.04.72.55.8 1.22 1.48 2.02 2.02.22.16.48.2.72.04l.82-.55c.26-.16.53-.18.78.02l1.35 1.05c.2.25.25.6-.05.9-.55.56-1.3.82-2.06.67-1.53-.3-3.05-1.25-4.42-2.62-1.37-1.37-2.32-2.89-2.62-4.42-.15-.76.11-1.51.67-2.06Z" fill="currentColor"/>
           </svg>
-
           Unirme al grupo de WhatsApp
           <span aria-hidden="true">→</span>
         </a>
       </div>
 
-      <!-- Paso 2 -->
       <div class="second-step">
         <div>
-          <div class="step-label">
-            Paso 2 · Recibí la clase previa
-          </div>
-
-          <h2>
-            Escribime “LISTO” por Instagram
-          </h2>
-
-          <p>
-            Te envío una clase privada para que veas antes
-            de la masterclass.
-          </p>
+          <div class="step-label">Paso 2 · Recibí la clase previa</div>
+          <h2>Escribime “LISTO” por Instagram</h2>
+          <p>Te envío una clase privada para que veas antes de la masterclass.</p>
         </div>
 
-        <a
-          class="button button-instagram"
-          href="https://www.instagram.com/pastor_performance/"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-meta-event="InstagramStep"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <rect
-              x="3"
-              y="3"
-              width="18"
-              height="18"
-              rx="5"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-
-            <circle
-              cx="12"
-              cy="12"
-              r="4"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-
-            <circle
-              cx="17.5"
-              cy="6.5"
-              r="1"
-              fill="currentColor"
-            />
+        <a class="button button-instagram" href="https://www.instagram.com/pastor_performance/" target="_blank" rel="noopener noreferrer" data-meta-event="InstagramStep">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
           </svg>
-
           Escribir “LISTO”
           <span aria-hidden="true">→</span>
         </a>
       </div>
 
-      <!-- Horario inferior separado en dos renglones -->
       <div class="schedule-block">
-
         <div class="schedule-line">
           <span class="live">En vivo</span>
-
           <span class="schedule-separator">·</span>
-
           <span>Lunes 21 de septiembre</span>
         </div>
 
         <div class="schedule-line schedule-times">
           <span>🇦🇷 2 PM ARG</span>
-
           <span class="schedule-separator">·</span>
-
           <span>🇪🇸 7 PM ESPAÑA</span>
         </div>
-
       </div>
-
     </section>
 
-    <!-- Información inferior -->
-    <section
-      class="features"
-      aria-label="Información de la masterclass"
-    >
-
+    <section class="features" aria-label="Información de la masterclass">
       <article class="feature">
         <div class="feature-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="9"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-
-            <path
-              d="M12 7v5l3 2"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-
         <div class="feature-copy">
           <strong>En vivo</strong>
           <span>Con Juan Pastor</span>
@@ -877,28 +694,11 @@
 
       <article class="feature">
         <div class="feature-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <rect
-              x="4"
-              y="4"
-              width="16"
-              height="16"
-              rx="3"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-
-            <path
-              d="m10 9 5 3-5 3V9Z"
-              fill="currentColor"
-            />
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="m10 9 5 3-5 3V9Z" fill="currentColor"/>
           </svg>
         </div>
-
         <div class="feature-copy">
           <strong>Clase privada previa</strong>
           <span>Disponible por Instagram</span>
@@ -907,52 +707,36 @@
 
       <article class="feature">
         <div class="feature-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.3-4.72A8.5 8.5 0 1 1 20.5 11.8Z"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.3-4.72A8.5 8.5 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-
         <div class="feature-copy">
           <strong>Acceso por WhatsApp</strong>
           <span>Link y recordatorios del evento</span>
         </div>
       </article>
-
     </section>
-
   </main>
 
   <script>
-    document
-      .querySelectorAll("[data-meta-event]")
-      .forEach(function (link) {
-        link.addEventListener("click", function () {
-          if (typeof fbq !== "function") return;
+    document.querySelectorAll('[data-meta-event]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (typeof fbq !== 'function') return;
 
-          const eventName = link.dataset.metaEvent;
+        const eventName = link.dataset.metaEvent;
 
-          if (eventName === "Lead") {
-            fbq("track", "Lead", {
-              content_name: "Registro WhatsApp Masterclass"
-            });
-          } else {
-            fbq("trackCustom", eventName, {
-              content_name: "Clase previa por Instagram"
-            });
-          }
-        });
+        if (eventName === 'Lead') {
+          fbq('track', 'Lead', {
+            content_name: 'Registro WhatsApp Masterclass'
+          });
+        } else {
+          fbq('trackCustom', eventName, {
+            content_name: 'Clase previa por Instagram'
+          });
+        }
       });
+    });
   </script>
-
 </body>
 </html>
