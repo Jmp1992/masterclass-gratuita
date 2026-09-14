@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Masterclass de Rendimiento para Poker Players | Juan Pastor</title>
+
   <meta
     name="description"
-    content="Masterclass gratuita de rendimiento para poker players con Juan Pastor."
+    content="Aprendé el sistema de rendimiento de Juan Pastor para sostener tu mejor nivel en las mesas."
   >
 
-  <title>Masterclass de rendimiento | Juan Pastor</title>
+  <meta name="theme-color" content="#050706">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -30,24 +32,25 @@
   <style>
     :root {
       --background: #050706;
-      --surface: rgba(15, 19, 16, 0.9);
-      --surface-light: #f4f5f2;
-      --text: #f8faf8;
-      --muted: #adb6af;
-      --dark-text: #0d100e;
-
-      --green: #00a957;
-      --green-dark: #007f43;
-      --orange: #ff6a22;
-      --orange-soft: #ff9a42;
-      --purple: #bd3ed1;
-
-      --line: rgba(255, 255, 255, 0.12);
-      --radius: 22px;
+      --background-soft: #0b0f0d;
+      --surface: rgba(13, 18, 15, 0.88);
+      --surface-light: rgba(255, 255, 255, 0.05);
+      --text: #f6f8f7;
+      --text-muted: #a8b0ab;
+      --green: #00b968;
+      --green-light: #21db86;
+      --orange: #ff642f;
+      --orange-light: #ff895f;
+      --border: rgba(255, 255, 255, 0.13);
+      --whatsapp: #11b968;
+      --instagram-one: #993ac9;
+      --instagram-two: #eb2b71;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -55,568 +58,539 @@
     }
 
     body {
-      margin: 0;
+      min-height: 100vh;
       min-height: 100svh;
       overflow-x: hidden;
-      color: var(--text);
       background: var(--background);
-      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      font-family:
+        Inter, Montserrat, Arial, Helvetica, sans-serif;
+      line-height: 1.4;
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -3;
+      z-index: -2;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, black, transparent 88%);
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
     }
 
     body::after {
       content: "";
       position: fixed;
-      width: 850px;
-      height: 600px;
-      right: -230px;
-      bottom: -260px;
-      z-index: -2;
+      left: 50%;
+      bottom: -340px;
+      z-index: -1;
+      width: 950px;
+      height: 650px;
       pointer-events: none;
-      border-radius: 50%;
-      background: rgba(255, 73, 21, 0.3);
-      filter: blur(140px);
+      transform: translateX(-50%);
+      background: radial-gradient(
+        circle,
+        rgba(255, 91, 38, 0.28) 0%,
+        rgba(255, 91, 38, 0.10) 38%,
+        transparent 70%
+      );
+      filter: blur(12px);
     }
 
-    .green-glow {
-      position: fixed;
-      width: 600px;
-      height: 420px;
-      top: -250px;
-      left: 17%;
-      z-index: -2;
-      pointer-events: none;
-      border-radius: 50%;
-      background: rgba(0, 169, 87, 0.17);
-      filter: blur(130px);
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--green-light);
+      outline-offset: 4px;
     }
 
     .page {
-      width: min(1380px, calc(100% - 32px));
-      min-height: 100svh;
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 14px 0 22px;
-      display: flex;
-      flex-direction: column;
+      padding: 20px 0 38px;
     }
 
     /* Barra superior */
 
-    .event-bar {
-      min-height: 62px;
-      padding: 9px 12px 9px 20px;
+    .topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      border: 1px solid var(--line);
+      gap: 24px;
+      min-height: 70px;
+      padding: 12px 14px 12px 22px;
+      border: 1px solid var(--border);
       border-radius: 18px;
-      background: rgba(5, 8, 6, 0.78);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+      background: rgba(5, 7, 6, 0.86);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
       backdrop-filter: blur(12px);
     }
 
-    .event-information {
+    .event-info {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 850;
-      letter-spacing: 0.025em;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
     }
 
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      flex: 0 0 auto;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 18px rgba(255, 106, 34, 0.9);
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--orange-light);
     }
 
-    .top-cta {
-      min-height: 42px;
-      padding: 0 25px;
+    .live::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 14px var(--orange);
+    }
+
+    .separator {
+      color: #56605a;
+    }
+
+    .time {
+      white-space: nowrap;
+    }
+
+    /* Botones */
+
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      flex: 0 0 auto;
+      gap: 10px;
+      min-height: 54px;
+      border: 0;
       border-radius: 12px;
-      color: #090b09;
-      background: #ffffff;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 950;
+      padding: 15px 23px;
+      font-size: 0.92rem;
+      font-weight: 900;
+      letter-spacing: 0.015em;
+      text-align: center;
+      text-transform: uppercase;
+      cursor: pointer;
       transition:
         transform 180ms ease,
-        box-shadow 180ms ease;
+        box-shadow 180ms ease,
+        filter 180ms ease;
     }
 
-    .top-cta:hover {
+    .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(255, 255, 255, 0.2);
+      filter: brightness(1.06);
+    }
+
+    .button-top {
+      min-width: 235px;
+      min-height: 46px;
+      padding: 12px 20px;
+      color: #07110c;
+      background: #ffffff;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.13);
+    }
+
+    .button-primary {
+      width: min(100%, 480px);
+      min-height: 64px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #00a85c, #00cf76);
+      box-shadow:
+        0 16px 38px rgba(0, 185, 104, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .button-instagram {
+      min-height: 52px;
+      color: #ffffff;
+      background: linear-gradient(
+        110deg,
+        var(--instagram-one),
+        var(--instagram-two)
+      );
+      box-shadow: 0 12px 30px rgba(213, 44, 119, 0.2);
+    }
+
+    .button svg {
+      width: 21px;
+      height: 21px;
+      flex-shrink: 0;
     }
 
     /* Hero */
 
     .hero {
-      flex: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.22fr) minmax(360px, 0.78fr);
+      position: relative;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: clamp(36px, 6vw, 90px);
-      padding: clamp(54px, 7vw, 94px) clamp(12px, 4vw, 54px) 50px;
+      padding: 70px 20px 40px;
+      text-align: center;
     }
 
-    .hero-copy {
-      min-width: 0;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      z-index: -1;
+      width: 600px;
+      height: 300px;
+      transform: translateX(-50%);
+      background: radial-gradient(
+        circle,
+        rgba(0, 185, 104, 0.12),
+        transparent 68%
+      );
+      filter: blur(15px);
     }
 
     .eyebrow {
-      width: fit-content;
-      margin-bottom: 22px;
-      padding: 8px 13px;
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      border: 1px solid rgba(255, 106, 34, 0.32);
+      margin-bottom: 24px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 100, 47, 0.32);
       border-radius: 999px;
-      color: var(--orange-soft);
-      background: rgba(255, 106, 34, 0.08);
-      font-size: 12px;
+      color: var(--orange-light);
+      background: rgba(255, 100, 47, 0.07);
+      font-size: 0.78rem;
       font-weight: 900;
-      font-style: italic;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--orange);
-      box-shadow: 0 0 14px rgba(255, 106, 34, 0.8);
+      box-shadow: 0 0 12px var(--orange);
     }
 
     h1 {
-      max-width: 850px;
-      margin: 0;
-      font-size: clamp(54px, 6.8vw, 102px);
+      max-width: 1080px;
+      font-size: clamp(2.35rem, 5.6vw, 4.9rem);
       font-weight: 950;
-      line-height: 0.88;
-      letter-spacing: -0.065em;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
       text-transform: uppercase;
+      text-wrap: balance;
     }
 
     h1 span {
+      display: block;
+    }
+
+    h1 .accent {
+      margin: 8px 0;
       color: var(--green);
     }
 
-    .hero-description {
-      max-width: 760px;
-      margin: 26px 0 0;
-      color: #e4e9e5;
-      font-size: clamp(18px, 1.75vw, 25px);
-      font-weight: 680;
-      line-height: 1.25;
-      letter-spacing: -0.025em;
+    .subtitle {
+      max-width: 780px;
+      margin: 28px auto 0;
+      color: #d5dad7;
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
+      font-weight: 600;
+      line-height: 1.55;
+      text-wrap: balance;
     }
 
-    .hero-description strong {
+    .subtitle strong {
       color: #ffffff;
     }
 
-    .primary-action {
+    .host {
+      margin-top: 14px;
+      color: var(--text-muted);
+      font-size: 0.87rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .main-action {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
       margin-top: 32px;
     }
 
-    .main-cta {
-      width: fit-content;
-      min-height: 66px;
-      padding: 0 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      border-radius: 15px;
-      color: #080a08;
-      background: #ffffff;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 950;
-      letter-spacing: -0.015em;
-      box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.35),
-        0 0 0 1px rgba(255, 255, 255, 0.45);
-      transition:
-        transform 180ms ease,
-        box-shadow 180ms ease;
-    }
-
-    .main-cta:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 22px 50px rgba(0, 0, 0, 0.42),
-        0 0 26px rgba(255, 255, 255, 0.16);
-    }
-
-    .main-cta .arrow {
-      color: var(--green-dark);
-      font-size: 25px;
-      line-height: 1;
-    }
-
-    .cta-note {
-      margin: 10px 0 0 4px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-    .cta-note strong {
-      color: #ffffff;
-    }
-
-    /* Registro */
-
-    .registration-card {
-      position: relative;
-      overflow: hidden;
-      padding: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(21, 27, 23, 0.97),
-          rgba(8, 11, 9, 0.96)
-        );
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
-    }
-
-    .registration-card::before {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      top: -140px;
-      right: -100px;
-      border-radius: 50%;
-      background: rgba(0, 169, 87, 0.2);
-      filter: blur(65px);
-    }
-
-    .registration-label {
-      position: relative;
-      margin: 0;
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .registration-card h2 {
-      position: relative;
-      margin: 8px 0 22px;
-      font-size: clamp(28px, 3vw, 41px);
-      line-height: 1;
-      letter-spacing: -0.045em;
-    }
-
-    .step {
-      position: relative;
-      padding: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.11);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.045);
-    }
-
-    .step + .step {
+    .step-caption {
       margin-top: 13px;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      font-weight: 600;
     }
 
-    .step-number {
-      margin: 0 0 8px;
-      color: var(--orange-soft);
-      font-size: 12px;
-      font-weight: 950;
-      letter-spacing: 0.09em;
+    .step-caption strong {
+      color: #ffffff;
+    }
+
+    /* Paso dos */
+
+    .second-step {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      width: min(100%, 850px);
+      margin: 26px auto 0;
+      padding: 18px 20px 18px 24px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+      text-align: left;
+      backdrop-filter: blur(12px);
+    }
+
+    .step-label {
+      margin-bottom: 4px;
+      color: var(--orange-light);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .step h3 {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+    .second-step h2 {
+      font-size: 1.06rem;
+      font-weight: 850;
+      line-height: 1.25;
     }
 
-    .step p {
-      margin: 7px 0 14px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.35;
-    }
-
-    .step-button {
-      width: 100%;
-      min-height: 48px;
-      padding: 0 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      border-radius: 11px;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 900;
-      transition:
-        transform 180ms ease,
-        filter 180ms ease;
-    }
-
-    .step-button:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.08);
-    }
-
-    .whatsapp-button {
-      background: linear-gradient(180deg, #11b960, #008948);
-    }
-
-    .instagram-button {
-      background: linear-gradient(
-        135deg,
-        #7e3cc4,
-        #bd3ed1 52%,
-        #e13572
-      );
-    }
-
-    .step-button .button-arrow {
-      font-size: 22px;
-    }
-
-    .privacy-note {
-      margin: 15px 2px 0;
-      color: #879189;
-      font-size: 11px;
-      font-weight: 650;
-      line-height: 1.4;
-      text-align: center;
+    .second-step p {
+      margin-top: 5px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
 
     /* Franja inferior */
 
-    .benefits {
+    .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      margin-top: 25px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(5, 7, 6, 0.72);
+      backdrop-filter: blur(12px);
     }
 
-    .benefit {
-      min-height: 82px;
-      padding: 17px 20px;
+    .feature {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 13px;
-      text-align: left;
+      min-height: 86px;
+      padding: 18px;
     }
 
-    .benefit + .benefit {
-      border-left: 1px solid var(--line);
+    .feature + .feature {
+      border-left: 1px solid var(--border);
     }
 
-    .benefit-icon {
-      width: 38px;
-      height: 38px;
+    .feature-icon {
       display: grid;
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
       place-items: center;
-      flex: 0 0 auto;
-      border: 1px solid rgba(255, 106, 34, 0.35);
-      border-radius: 50%;
-      color: var(--orange);
-      font-size: 16px;
-      font-weight: 950;
+      border-radius: 12px;
+      color: var(--orange-light);
+      background: rgba(255, 100, 47, 0.09);
     }
 
-    .benefit-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .feature-icon svg {
+      width: 23px;
+      height: 23px;
     }
 
-    .benefit-copy strong {
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .benefit-copy span {
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 650;
-    }
-
-    .brand {
-      padding-top: 15px;
-      color: #7c867e;
-      font-size: 10px;
-      font-weight: 750;
-      letter-spacing: 0.13em;
-      text-align: center;
+    .feature-copy strong {
+      display: block;
+      font-size: 0.88rem;
+      line-height: 1.2;
       text-transform: uppercase;
     }
 
-    .brand strong {
-      color: #ffffff;
+    .feature-copy span {
+      display: block;
+      margin-top: 3px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
     }
 
-    /* Tablet */
+    /* Responsive */
 
-    @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 46px;
-        padding-top: 65px;
-      }
-
-      .hero-copy {
-        text-align: center;
-      }
-
-      .eyebrow,
-      .main-cta {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .cta-note {
-        text-align: center;
-      }
-
-      .registration-card {
-        width: min(650px, 100%);
-        margin: 0 auto;
-      }
-
-      .benefits {
-        margin-top: 20px;
-      }
-    }
-
-    /* Celular */
-
-    @media (max-width: 650px) {
+    @media (max-width: 900px) {
       .page {
-        width: min(100% - 20px, 1380px);
-        padding-top: 10px;
+        width: min(100% - 28px, 760px);
       }
 
-      .event-bar {
-        padding: 12px;
-        flex-direction: column;
+      .topbar {
         align-items: stretch;
-        gap: 10px;
       }
 
-      .event-information {
-        justify-content: center;
-        text-align: center;
-        font-size: 10px;
-        line-height: 1.3;
+      .event-info {
+        font-size: 0.78rem;
       }
 
-      .top-cta {
-        width: 100%;
+      .button-top {
+        min-width: 200px;
       }
 
-      .hero {
-        padding: 48px 5px 30px;
-        gap: 35px;
-      }
-
-      .eyebrow {
-        margin-bottom: 17px;
-        font-size: 9px;
-      }
-
-      h1 {
-        font-size: clamp(43px, 14vw, 65px);
-        line-height: 0.91;
-      }
-
-      .hero-description {
-        margin-top: 20px;
-        font-size: 17px;
-      }
-
-      .primary-action {
-        margin-top: 25px;
-      }
-
-      .main-cta {
-        width: 100%;
-        min-height: 60px;
-        padding: 0 17px;
-        font-size: 14px;
-      }
-
-      .registration-card {
-        padding: 19px;
-        border-radius: 18px;
-      }
-
-      .registration-card h2 {
-        margin-bottom: 17px;
-      }
-
-      .step {
-        padding: 16px;
-      }
-
-      .benefits {
+      .features {
         grid-template-columns: 1fr;
       }
 
-      .benefit {
-        min-height: 70px;
+      .feature {
         justify-content: flex-start;
       }
 
-      .benefit + .benefit {
-        border-top: 1px solid var(--line);
+      .feature + .feature {
+        border-top: 1px solid var(--border);
         border-left: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        width: min(100% - 24px, 520px);
+        padding-top: 12px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        gap: 13px;
+        padding: 15px;
+      }
+
+      .event-info {
+        justify-content: center;
+        gap: 7px 9px;
+        text-align: center;
+      }
+
+      .event-info .date {
+        width: 100%;
+      }
+
+      .event-info .separator:first-of-type {
+        display: none;
+      }
+
+      .button-top {
+        width: 100%;
+      }
+
+      .hero {
+        padding: 48px 2px 30px;
+      }
+
+      .eyebrow {
+        margin-bottom: 20px;
+        padding: 7px 11px;
+        font-size: 0.67rem;
+        letter-spacing: 0.09em;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 10.4vw, 3.15rem);
+        line-height: 1.01;
+        letter-spacing: -0.047em;
+      }
+
+      h1 .accent {
+        margin: 7px 0;
+      }
+
+      .subtitle {
+        margin-top: 22px;
+        padding: 0 8px;
+        font-size: 1rem;
+      }
+
+      .host {
+        font-size: 0.77rem;
+      }
+
+      .main-action {
+        margin-top: 26px;
+      }
+
+      .button-primary {
+        min-height: 60px;
+        padding: 15px 17px;
+        font-size: 0.83rem;
+      }
+
+      .step-caption {
+        max-width: 330px;
+        font-size: 0.79rem;
+      }
+
+      .second-step {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .button-instagram {
+        width: 100%;
+        font-size: 0.78rem;
+      }
+
+      .features {
+        margin-top: 18px;
+      }
+
+      .feature {
+        min-height: 76px;
+        padding: 15px 18px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 1.86rem;
+      }
+
+      .separator {
+        display: none;
+      }
+
+      .time {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Meta Pixel fallback -->
+  <!-- Meta Pixel noscript -->
   <noscript>
     <img
       height="1"
@@ -627,151 +601,225 @@
     >
   </noscript>
 
-  <div class="green-glow" aria-hidden="true"></div>
+  <main class="page">
 
-  <div class="page">
-    <header class="event-bar">
-      <div class="event-information">
-        <span class="live-dot" aria-hidden="true"></span>
-        <span>
-          En vivo · Lunes 21 de septiembre ·
-          2 PM ARG / 7 PM España
-        </span>
+    <!-- Barra superior -->
+    <header class="topbar">
+      <div class="event-info">
+        <span class="live">En vivo</span>
+        <span class="separator">·</span>
+        <span class="date">Lunes 21 de septiembre</span>
+        <span class="separator">·</span>
+        <span class="time">🇦🇷 2 PM ARG</span>
+        <span class="separator">·</span>
+        <span class="time">🇪🇸 7 PM ESPAÑA</span>
       </div>
 
       <a
-        class="top-cta"
+        class="button button-top"
         href="https://chat.whatsapp.com/ClLJsVv1HwL1ZPWXsqWC4W"
         target="_blank"
         rel="noopener noreferrer"
-        onclick="fbq('track', 'Lead');"
+        data-meta-event="Lead"
       >
-        ASEGURÁ TU LUGAR →
+        Asegurá tu lugar
+        <span aria-hidden="true">→</span>
       </a>
     </header>
 
-    <main class="hero">
-      <section class="hero-copy">
-        <div class="eyebrow">
-          Masterclass de rendimiento · Cupos limitados
-        </div>
-
-        <h1>
-          Sostené tu
-          <span>A-game</span>
-          por más tiempo
-        </h1>
-
-        <p class="hero-description">
-          Construí un sistema de
-          <strong>energía, foco y recuperación</strong>
-          para rendir mejor durante toda tu sesión.
-        </p>
-
-        <div class="primary-action">
-          <a
-            class="main-cta"
-            href="https://chat.whatsapp.com/ClLJsVv1HwL1ZPWXsqWC4W"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="fbq('track', 'Lead');"
-          >
-            RESERVAR MI LUGAR GRATIS
-            <span class="arrow">→</span>
-          </a>
-
-          <p class="cta-note">
-            <strong>Paso 1:</strong>
-            entrás al grupo privado de WhatsApp para recibir el acceso.
-          </p>
-        </div>
-      </section>
-
-      <aside class="registration-card">
-        <p class="registration-label">Registro gratuito</p>
-        <h2>Completá estos 2 pasos</h2>
-
-        <article class="step">
-          <p class="step-number">Paso 1 · WhatsApp</p>
-          <h3>Reservá tu lugar</h3>
-
-          <p>
-            Unite al grupo privado donde voy a enviarte el acceso
-            y los avisos de la masterclass.
-          </p>
-
-          <a
-            class="step-button whatsapp-button"
-            href="https://chat.whatsapp.com/ClLJsVv1HwL1ZPWXsqWC4W"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="fbq('track', 'Lead');"
-          >
-            <span>ENTRAR AL GRUPO</span>
-            <span class="button-arrow">→</span>
-          </a>
-        </article>
-
-        <article class="step">
-          <p class="step-number">Paso 2 · Instagram</p>
-          <h3>Escribime “LISTO”</h3>
-
-          <p>
-            Te envío una clase privada para que puedas verla
-            antes de la masterclass.
-          </p>
-
-          <a
-            class="step-button instagram-button"
-            href="https://www.instagram.com/pastor_performance/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="fbq('trackCustom', 'InstagramStep');"
-          >
-            <span>ESCRIBIR “LISTO” POR DM</span>
-            <span class="button-arrow">→</span>
-          </a>
-        </article>
-
-        <p class="privacy-note">
-          Completá ambos pasos para recibir el acceso
-          y el contenido privado previo.
-        </p>
-      </aside>
-    </main>
-
-    <section class="benefits" aria-label="Información de la masterclass">
-      <div class="benefit">
-        <div class="benefit-icon" aria-hidden="true">01</div>
-
-        <div class="benefit-copy">
-          <strong>EN VIVO CON JUAN PASTOR</strong>
-          <span>Masterclass de rendimiento</span>
-        </div>
+    <!-- Contenido principal -->
+    <section class="hero">
+      <div class="eyebrow">
+        Masterclass privada y gratuita · Cupos limitados
       </div>
 
-      <div class="benefit">
-        <div class="benefit-icon" aria-hidden="true">02</div>
+      <h1>
+        <span>Aprendé mi sistema de rendimiento</span>
+        <span class="accent">para poker players</span>
+        <span>y sostené tu mejor nivel en las mesas</span>
+      </h1>
 
-        <div class="benefit-copy">
-          <strong>CLASE PRIVADA PREVIA</strong>
-          <span>La recibís por Instagram</span>
-        </div>
+      <p class="subtitle">
+        <strong>En esta masterclass en vivo</strong> vas a aprender cómo
+        gestionar tu energía, foco y recuperación para rendir al máximo
+        durante más tiempo.
+      </p>
+
+      <p class="host">Con Juan Pastor</p>
+
+      <div class="main-action">
+        <a
+          class="button button-primary"
+          href="https://chat.whatsapp.com/ClLJsVv1HwL1ZPWXsqWC4W"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-meta-event="Lead"
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.3-4.72A8.5 8.5 0 1 1 20.5 11.8Z"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M8.2 7.8c.3-.3.65-.25.9-.05l1.05 1.35c.2.25.18.52.02.78l-.55.82c-.16.24-.12.5.04.72.55.8 1.22 1.48 2.02 2.02.22.16.48.2.72.04l.82-.55c.26-.16.53-.18.78.02l1.35 1.05c.2.25.25.6-.05.9-.55.56-1.3.82-2.06.67-1.53-.3-3.05-1.25-4.42-2.62-1.37-1.37-2.32-2.89-2.62-4.42-.15-.76.11-1.51.67-2.06Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          Reservar mi lugar gratis
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <p class="step-caption">
+          <strong>Paso 1:</strong> unite al grupo privado de WhatsApp para
+          recibir el acceso y todos los avisos.
+        </p>
       </div>
 
-      <div class="benefit">
-        <div class="benefit-icon" aria-hidden="true">03</div>
+      <!-- Paso 2 -->
+      <div class="second-step">
+        <div>
+          <div class="step-label">Paso 2 · Recibí la clase previa</div>
 
-        <div class="benefit-copy">
-          <strong>ACCESO POR WHATSAPP</strong>
-          <span>Información y avisos del evento</span>
+          <h2>
+            Escribime “LISTO” por Instagram
+          </h2>
+
+          <p>
+            Te envío una clase privada para que veas antes de la masterclass.
+          </p>
         </div>
+
+        <a
+          class="button button-instagram"
+          href="https://www.instagram.com/pastor_performance/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-meta-event="InstagramStep"
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="5"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+
+          Escribir “LISTO”
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
 
-    <footer class="brand">
-      Juan Pastor · <strong>Pastor Performance</strong>
-    </footer>
-  </div>
+    <!-- Información inferior -->
+    <section class="features" aria-label="Información de la masterclass">
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="M12 7v5l3 2"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div class="feature-copy">
+          <strong>En vivo</strong>
+          <span>Con Juan Pastor</span>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect
+              x="4"
+              y="4"
+              width="16"
+              height="16"
+              rx="3"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="m10 9 5 3-5 3V9Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+
+        <div class="feature-copy">
+          <strong>Clase privada previa</strong>
+          <span>Disponible por Instagram</span>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.3-4.72A8.5 8.5 0 1 1 20.5 11.8Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div class="feature-copy">
+          <strong>Acceso por WhatsApp</strong>
+          <span>Link y recordatorios del evento</span>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll("[data-meta-event]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (typeof fbq !== "function") return;
+
+        const eventName = link.dataset.metaEvent;
+
+        if (eventName === "Lead") {
+          fbq("track", "Lead", {
+            content_name: "Registro WhatsApp Masterclass"
+          });
+        } else {
+          fbq("trackCustom", eventName, {
+            content_name: "Clase previa por Instagram"
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
