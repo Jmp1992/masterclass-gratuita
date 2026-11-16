@@ -329,6 +329,7 @@
 
     /* ---------- Modal del formulario ---------- */
     dialog {
+      margin: auto; /* el reset global (* {margin:0}) lo dejaba pegado a la izquierda */
       width: min(620px, calc(100% - 24px));
       max-height: calc(100dvh - 24px);
       overflow: auto;
@@ -490,7 +491,7 @@
 
     <div id="step-done" class="done" hidden>
       <h2>Listo, ya estás registrado</h2>
-      <p>Te estoy llevando al grupo de WhatsApp…</p>
+      <p id="done-msg">Se abrió el grupo de WhatsApp en otra pestaña.</p>
       <a class="button button-green" id="wa-done" target="_blank" rel="noopener">Unirme al grupo de WhatsApp <span aria-hidden="true">→</span></a>
     </div>
   </dialog>
@@ -502,7 +503,6 @@
        ============================================================ */
     const CONFIG = {
       whatsappURL: "https://chat.whatsapp.com/LP6ExtDKGkCBbuErrKb9wy",
-      redirectDelayMs: 2500,          // espera antes de mandarlo a WhatsApp (deja salir el evento del pixel)
       pixelEvents: {
         leadOnFormSubmit: true        // único evento que alimenta el pixel
       }
@@ -525,19 +525,33 @@
       document.getElementById("reg-close").addEventListener("click", function () { dlg.close(); });
       dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 
-      // GHL avisa al enviar el formulario
-      window.addEventListener("message", function (e) {
-        if (!/^https:\/\/([\w-]+\.)*(leadconnectorhq|msgsndr)\.com$/.test(e.origin)) return;
-        var d = e.data;
-        try { d = typeof d === "string" ? d : JSON.stringify(d); } catch (_) { return; }
-        if (!/form[-_ ]?submitted|formsubmit/i.test(d) || submitted) return;
+      // Formulario enviado: Lead al pixel + grupo de WhatsApp en pestaña nueva
+      function onLeadOk() {
+        if (submitted) return;
         submitted = true;
 
         if (CONFIG.pixelEvents.leadOnFormSubmit && window.fbq) fbq("track", "Lead");
 
         stepForm.hidden = true;
         stepDone.hidden = false;
-        setTimeout(function () { window.location.href = CONFIG.whatsappURL; }, CONFIG.redirectDelayMs);
+
+        var w = null;
+        try { w = window.open(CONFIG.whatsappURL, "_blank"); } catch (_) {}
+        if (w) { try { w.opener = null; } catch (_) {} }
+        else { document.getElementById("done-msg").textContent = "Tocá el botón para entrar al grupo de WhatsApp."; }
+      }
+
+      window.addEventListener("message", function (e) {
+        // 1) Aviso de nuestra propia gracias.html (cargada dentro del form al enviar). Es la vía confiable.
+        if (e.origin === window.location.origin) {
+          if (e.data && e.data.type === "masterclass-lead-ok") onLeadOk();
+          return;
+        }
+        // 2) Respaldo: aviso directo de GHL
+        if (!/^https:\/\/([\w-]+\.)*(leadconnectorhq|msgsndr)\.com$/.test(e.origin)) return;
+        var d = e.data;
+        try { d = typeof d === "string" ? d : JSON.stringify(d); } catch (_) { return; }
+        if (/form[-_ ]?submitted|formsubmit/i.test(d)) onLeadOk();
       });
     })();
   </script>
