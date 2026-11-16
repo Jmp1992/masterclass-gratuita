@@ -31,18 +31,10 @@
       /* Cargada DENTRO del formulario: avisa a la landing y ella abre WhatsApp en pestaña nueva. */
       try { window.parent.postMessage({ type: "masterclass-lead-ok" }, window.location.origin); } catch (e) {}
     } else {
-      /* Abierta como página completa (GHL redirigió toda la ventana): Lead al pixel y directo al grupo. */
+      /* Abierta como página completa (GHL redirigió toda la ventana): directo al grupo. */
       document.body.className = "top";
       document.getElementById("msg").textContent = "Te llevo al grupo de WhatsApp…";
       document.getElementById("wa").style.display = "inline-block";
-
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1112741794543926');
-      fbq('track', 'Lead');
 
       setTimeout(function () { window.location.href = WA; }, 1500);
     }
